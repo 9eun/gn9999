@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model member {
+  idx     Int     @id @default(autoincrement())
+  name    String? @db.VarChar(255)
+  company String? @db.VarChar(255)
+  memo    String? @db.VarChar(255)
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model test {
+  idx Int     @id @default(autoincrement())
+  aaa String? @db.VarChar(255)
+  bbb String? @db.VarChar(255)
+}
+
+model gnnn {
+  idx  Int     @id @default(autoincrement())
+  temp String? @db.VarChar(45)
+  tc   String? @db.VarChar(45)
+  qwer String? @db.VarChar(45)
+}
